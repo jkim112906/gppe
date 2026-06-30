@@ -20,7 +20,7 @@
 }
 
 *{box-sizing:border-box;}
-html{scroll-behavior:smooth;font-size:117%;}
+html{scroll-behavior:smooth;font-size:112%;}
 body{
   margin:0;
   background:var(--paper);
@@ -431,6 +431,8 @@ footer.band-ink{border-top:1px solid #e4e7ec;}
 /* ---------- Nav menu: spaced out, vertically centered ---------- */
 .nav-links a{font-size:1.1rem;white-space:nowrap;}
 .nav-links{gap:30px;align-items:center;}
+/* English uses the same 30px gap as Korean; the size (below) is what
+   keeps the two languages at a matching footprint. */
 
 /* ---------- Logo: centered subtitle, balanced sizing ---------- */
 .logo{align-items:center;}
@@ -505,10 +507,15 @@ footer.band-ink{border-top:1px solid #e4e7ec;}
   font-family:"Cormorant Garamond",serif;
 }
 
-/* English nav links now share the same size as Korean for a unified,
-   maximized nav that matches the mobile menu. */
-.lang-en .nav-links a{
-  font-size:1.1rem;
+/* English words are longer than Korean, so on the desktop bar the English
+   nav is set smaller so its total width matches the Korean (keeping the
+   logo and controls in the same place when you switch languages).
+   Scoped to desktop only — the mobile slide-in menu has room to spare
+   vertically, so there English stays the same size as Korean. */
+@media(min-width:881px){
+  .lang-en .nav-links a{
+    font-size:0.85rem;
+  }
 }
 /* ============================================================
    NO GOLD TEXT
