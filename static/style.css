@@ -579,7 +579,10 @@ footer.band-ink{border-top:1px solid #e4e7ec;}
   .nav-toggle{flex:0 0 auto;padding:6px 2px;}
 }
 
-/* Mobile slide-in menu matches the desktop nav size (parity). */
+/* Mobile menu: the selected (active) link uses a light accent so it
+   stands out on the dark slide-in overlay. On the light desktop bar
+   the active link stays dark navy (handled above); only the dark
+   mobile overlay needs this brighter color. */
 @media(max-width:880px){
-  .nav-links a{font-size:1.1rem;}
+  .nav-links a.active{color:#c6a878;}
 }
